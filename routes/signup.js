@@ -1,5 +1,5 @@
 var hatchet = require('hatchet');
-var url = process.env.SIGNUP;
+var signup_url = process.env.SIGNUP;
 
 var signupRoutes = function(transaction, callback) {
   var payload = {
@@ -13,7 +13,7 @@ var signupRoutes = function(transaction, callback) {
   };
 
   hatchet.send("send_post_request", {
-    url: url,
+    signup_url: signup_url,
     json: true,
     form: payload
   }, (hatchet_error, response) => {
